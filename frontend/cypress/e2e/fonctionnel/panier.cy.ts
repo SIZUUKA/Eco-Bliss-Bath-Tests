@@ -52,7 +52,6 @@ describe('Panier - Tests fonctionnels', () => {
     cy.get('[data-cy="cart-line"]').should('not.exist')
   })
 
-  // bug connu côté app : la limite à 20 n'est pas forcément bloquée
   it('Empêche une quantité supérieure à 20 dans le panier', () => {
     cy.visit('http://localhost:4200/#/products/6')
 
