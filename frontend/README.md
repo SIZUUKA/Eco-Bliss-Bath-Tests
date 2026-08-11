@@ -1,27 +1,34 @@
 # EcoBlissBath
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+Ce projet est un site e-commerce de produits de beauté écoresponsables, développé avec Angular CLI (version 13.3.0). Ce dépôt contient également les tests automatisés du site, réalisés avec Cypress.
 
-## Development server
+## Lancer l'application
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Lancer `ng serve` pour démarrer le serveur de développement. Ouvrir `http://localhost:4200/` dans le navigateur.
 
-## Code scaffolding
+## Installation des tests Cypress
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Installer les dépendances :
 
-## Build
+npm install
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Lancer les tests
 
-## Running unit tests
+Pour ouvrir l'interface Cypress et lancer les tests un par un :
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+npx cypress open
 
-## Running end-to-end tests
+Pour lancer tous les tests d'un coup en ligne de commande :
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+npx cypress run
 
-## Further help
+## Structure des tests
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- `cypress/e2e/api/` : tests des requêtes API (login, commandes/panier, produits, avis)
+- `cypress/e2e/fonctionnel/` : tests fonctionnels (connexion, panier)
+- `cypress/e2e/smoke/` : smoke tests (vérifications rapides des éléments essentiels)
+- `cypress/e2e/xss-tests/` : test de sécurité (faille XSS dans l'espace commentaire)
+
+## Générer le rapport
+
+Après `npx cypress run`, les captures d'écran en cas d'échec sont générées dans `cypress/screenshots`.
